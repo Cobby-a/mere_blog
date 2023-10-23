@@ -9,3 +9,7 @@ def index(request):
 def post(request, slug):
     posts = Posts.objects.get(slug = slug)
     return(render(request, 'post.html', {'posts': posts}))
+
+def posts(request):
+    posts = Posts.objects.all()
+    return(render(request, 'posts.html', {'posts':posts}))
