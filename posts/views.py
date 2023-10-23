@@ -6,6 +6,6 @@ def index(request):
     posts = Posts.objects.all()
     return(render(request, 'index.html', {'posts':posts}))
 
-def post(request, pk):
-    posts = Posts.objects.get(id = pk)
+def post(request, slug):
+    posts = Posts.objects.get(slug = slug)
     return(render(request, 'post.html', {'posts': posts}))
